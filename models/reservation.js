@@ -17,7 +17,7 @@ class Reservation {
   }
 
   /** methods for getting/setting number of guests */
-  set numberGuests(val) {
+  set numGuests(val) {
     if (val < 1) throw new Error("Cannot have fewer than 1 guest");
     this._numGuests = val;
   }
@@ -28,7 +28,7 @@ class Reservation {
   }
 
   set startAt(val) {
-    if (val instanceof Date && isNaN(val)) this._startAt = val;
+    if (val instanceof Date && !isNaN(val)) this._startAt = val;
     else throw new Error("Not a valid startAt");
   }
 
