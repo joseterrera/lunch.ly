@@ -1,3 +1,37 @@
+Lunch.ly Reservation System
+
+Lunchly is an Express app that is not an API server, nor is it RESTful. Instead, it’s a server-side templated application with custom URLs.
+
+Inside of models, we define two objects: Customers and Reservations. We use static methods.
+As MDN describes it, “Static methods are called without instantiating their class and are also not callable when the class is instantiated. Static methods are often used to create utility functions for an application.” In other words, static methods have no access to data stored in specific objects.
+
+Calling a static method or property:
+```js
+class ClassWithStaticMethod {
+
+  static staticProperty = 'someValue';
+  static staticMethod() {
+    return 'static method has been called.';
+  }
+
+}
+
+console.log(ClassWithStaticMethod.staticProperty);
+// output: "someValue"
+console.log(ClassWithStaticMethod.staticMethod());
+// output: "static method has been called."
+```
+
+
+Static methods are most often useful for methods that do things like create a new customer, or look up a customer in a database — you’d want to call this function before we had an individual customer yet, since the job of this function is to find/create one.
+
+While many languages call these “class methods,” in Javascript they’re often called “static methods,” so JS uses the static keyword to create these methods.
+
+In this app, we use static methods inside the models. These methods are meant to be called on the class. They look up the corresponding customer in the database, and return a JS instance of the correct class.
+
+
+
+
 Type psql on terminal and create database: `CREATE DATABASE lunchly;`
 Exit, and then type psql < data.sql to populate database
 Run `npm install`
@@ -47,4 +81,3 @@ console.log(student.firstName); // Sarah
 
 
 getter setter:
-These two keywords define accessor functions: a getter and a setter for the fullName property. When the property is accessed, the return value from the getter is used. When a value is set, the setter is called and passed the value that was set. It's up to you what you do with that value, but what is returned from the setter is the value that was passed in – so you don't need to return anything.
