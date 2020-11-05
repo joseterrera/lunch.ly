@@ -1,4 +1,4 @@
-Lunch.ly Reservation System
+### Lunch.ly Reservation System
 
 Lunchly is an Express app that is not an API server, nor is it [RESTful](https://medium.com/@atingenkay/restful-routes-what-are-they-8fe221521bb). Instead, it’s a server-side templated application with custom URLs.
 
